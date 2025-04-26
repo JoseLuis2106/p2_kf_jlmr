@@ -1,0 +1,61 @@
+[6.659s] Invoking command in '/home/student/AdR/p2_ws/src/p2_kf_adr': PYTHONPATH=/home/student/AdR/p2_ws/build/p2_kf_adr/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/student/AdR/p2_ws/install/p2_kf_adr/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/p2_kf_adr build --build-base /home/student/AdR/p2_ws/build/p2_kf_adr/build install --record /home/student/AdR/p2_ws/build/p2_kf_adr/install.log --single-version-externally-managed install_data
+[6.955s] running egg_info
+[6.956s] creating ../../build/p2_kf_adr/p2_kf_adr.egg-info
+[6.956s] writing ../../build/p2_kf_adr/p2_kf_adr.egg-info/PKG-INFO
+[6.956s] writing dependency_links to ../../build/p2_kf_adr/p2_kf_adr.egg-info/dependency_links.txt
+[6.956s] writing entry points to ../../build/p2_kf_adr/p2_kf_adr.egg-info/entry_points.txt
+[6.957s] writing requirements to ../../build/p2_kf_adr/p2_kf_adr.egg-info/requires.txt
+[6.957s] writing top-level names to ../../build/p2_kf_adr/p2_kf_adr.egg-info/top_level.txt
+[6.957s] writing manifest file '../../build/p2_kf_adr/p2_kf_adr.egg-info/SOURCES.txt'
+[6.959s] reading manifest file '../../build/p2_kf_adr/p2_kf_adr.egg-info/SOURCES.txt'
+[6.960s] writing manifest file '../../build/p2_kf_adr/p2_kf_adr.egg-info/SOURCES.txt'
+[6.960s] running build
+[6.960s] running build_py
+[6.960s] creating /home/student/AdR/p2_ws/build/p2_kf_adr/build
+[6.960s] creating /home/student/AdR/p2_ws/build/p2_kf_adr/build/lib
+[6.961s] creating /home/student/AdR/p2_ws/build/p2_kf_adr/build/lib/p2_kf_adr
+[6.961s] copying p2_kf_adr/kf_estimation.py -> /home/student/AdR/p2_ws/build/p2_kf_adr/build/lib/p2_kf_adr
+[6.961s] copying p2_kf_adr/__init__.py -> /home/student/AdR/p2_ws/build/p2_kf_adr/build/lib/p2_kf_adr
+[6.961s] copying p2_kf_adr/observation_models.py -> /home/student/AdR/p2_ws/build/p2_kf_adr/build/lib/p2_kf_adr
+[6.961s] copying p2_kf_adr/visualization.py -> /home/student/AdR/p2_ws/build/p2_kf_adr/build/lib/p2_kf_adr
+[6.962s] copying p2_kf_adr/kf_estimation_vel.py -> /home/student/AdR/p2_ws/build/p2_kf_adr/build/lib/p2_kf_adr
+[6.962s] copying p2_kf_adr/motion_models.py -> /home/student/AdR/p2_ws/build/p2_kf_adr/build/lib/p2_kf_adr
+[6.962s] copying p2_kf_adr/sensor_utils.py -> /home/student/AdR/p2_ws/build/p2_kf_adr/build/lib/p2_kf_adr
+[6.962s] creating /home/student/AdR/p2_ws/build/p2_kf_adr/build/lib/p2_kf_adr/filters
+[6.962s] copying p2_kf_adr/filters/__init__.py -> /home/student/AdR/p2_ws/build/p2_kf_adr/build/lib/p2_kf_adr/filters
+[6.962s] copying p2_kf_adr/filters/kalman_filter.py -> /home/student/AdR/p2_ws/build/p2_kf_adr/build/lib/p2_kf_adr/filters
+[6.963s] running install
+[6.963s] running install_lib
+[6.963s] creating /home/student/AdR/p2_ws/install/p2_kf_adr/lib/python3.10/site-packages/p2_kf_adr
+[6.964s] copying /home/student/AdR/p2_ws/build/p2_kf_adr/build/lib/p2_kf_adr/kf_estimation.py -> /home/student/AdR/p2_ws/install/p2_kf_adr/lib/python3.10/site-packages/p2_kf_adr
+[6.964s] copying /home/student/AdR/p2_ws/build/p2_kf_adr/build/lib/p2_kf_adr/__init__.py -> /home/student/AdR/p2_ws/install/p2_kf_adr/lib/python3.10/site-packages/p2_kf_adr
+[6.964s] copying /home/student/AdR/p2_ws/build/p2_kf_adr/build/lib/p2_kf_adr/observation_models.py -> /home/student/AdR/p2_ws/install/p2_kf_adr/lib/python3.10/site-packages/p2_kf_adr
+[6.964s] copying /home/student/AdR/p2_ws/build/p2_kf_adr/build/lib/p2_kf_adr/visualization.py -> /home/student/AdR/p2_ws/install/p2_kf_adr/lib/python3.10/site-packages/p2_kf_adr
+[6.964s] creating /home/student/AdR/p2_ws/install/p2_kf_adr/lib/python3.10/site-packages/p2_kf_adr/filters
+[6.965s] copying /home/student/AdR/p2_ws/build/p2_kf_adr/build/lib/p2_kf_adr/filters/__init__.py -> /home/student/AdR/p2_ws/install/p2_kf_adr/lib/python3.10/site-packages/p2_kf_adr/filters
+[6.965s] copying /home/student/AdR/p2_ws/build/p2_kf_adr/build/lib/p2_kf_adr/filters/kalman_filter.py -> /home/student/AdR/p2_ws/install/p2_kf_adr/lib/python3.10/site-packages/p2_kf_adr/filters
+[6.965s] copying /home/student/AdR/p2_ws/build/p2_kf_adr/build/lib/p2_kf_adr/kf_estimation_vel.py -> /home/student/AdR/p2_ws/install/p2_kf_adr/lib/python3.10/site-packages/p2_kf_adr
+[6.965s] copying /home/student/AdR/p2_ws/build/p2_kf_adr/build/lib/p2_kf_adr/motion_models.py -> /home/student/AdR/p2_ws/install/p2_kf_adr/lib/python3.10/site-packages/p2_kf_adr
+[6.965s] copying /home/student/AdR/p2_ws/build/p2_kf_adr/build/lib/p2_kf_adr/sensor_utils.py -> /home/student/AdR/p2_ws/install/p2_kf_adr/lib/python3.10/site-packages/p2_kf_adr
+[6.965s] byte-compiling /home/student/AdR/p2_ws/install/p2_kf_adr/lib/python3.10/site-packages/p2_kf_adr/kf_estimation.py to kf_estimation.cpython-310.pyc
+[6.966s] byte-compiling /home/student/AdR/p2_ws/install/p2_kf_adr/lib/python3.10/site-packages/p2_kf_adr/__init__.py to __init__.cpython-310.pyc
+[6.966s] byte-compiling /home/student/AdR/p2_ws/install/p2_kf_adr/lib/python3.10/site-packages/p2_kf_adr/observation_models.py to observation_models.cpython-310.pyc
+[6.966s] byte-compiling /home/student/AdR/p2_ws/install/p2_kf_adr/lib/python3.10/site-packages/p2_kf_adr/visualization.py to visualization.cpython-310.pyc
+[6.967s] byte-compiling /home/student/AdR/p2_ws/install/p2_kf_adr/lib/python3.10/site-packages/p2_kf_adr/filters/__init__.py to __init__.cpython-310.pyc
+[6.967s] byte-compiling /home/student/AdR/p2_ws/install/p2_kf_adr/lib/python3.10/site-packages/p2_kf_adr/filters/kalman_filter.py to kalman_filter.cpython-310.pyc
+[6.968s] byte-compiling /home/student/AdR/p2_ws/install/p2_kf_adr/lib/python3.10/site-packages/p2_kf_adr/kf_estimation_vel.py to kf_estimation_vel.cpython-310.pyc
+[6.968s] byte-compiling /home/student/AdR/p2_ws/install/p2_kf_adr/lib/python3.10/site-packages/p2_kf_adr/motion_models.py to motion_models.cpython-310.pyc
+[6.968s] byte-compiling /home/student/AdR/p2_ws/install/p2_kf_adr/lib/python3.10/site-packages/p2_kf_adr/sensor_utils.py to sensor_utils.cpython-310.pyc
+[6.969s] running install_data
+[6.969s] creating /home/student/AdR/p2_ws/install/p2_kf_adr/share/ament_index
+[6.970s] creating /home/student/AdR/p2_ws/install/p2_kf_adr/share/ament_index/resource_index
+[6.970s] creating /home/student/AdR/p2_ws/install/p2_kf_adr/share/ament_index/resource_index/packages
+[6.970s] copying resource/p2_kf_adr -> /home/student/AdR/p2_ws/install/p2_kf_adr/share/ament_index/resource_index/packages
+[6.970s] copying package.xml -> /home/student/AdR/p2_ws/install/p2_kf_adr/share/p2_kf_adr
+[6.970s] running install_egg_info
+[6.972s] Copying ../../build/p2_kf_adr/p2_kf_adr.egg-info to /home/student/AdR/p2_ws/install/p2_kf_adr/lib/python3.10/site-packages/p2_kf_adr-0.0.0-py3.10.egg-info
+[6.973s] running install_scripts
+[6.996s] Installing kf_estimation script to /home/student/AdR/p2_ws/install/p2_kf_adr/lib/p2_kf_adr
+[6.996s] Installing kf_estimation_vel script to /home/student/AdR/p2_ws/install/p2_kf_adr/lib/p2_kf_adr
+[6.997s] writing list of installed files to '/home/student/AdR/p2_ws/build/p2_kf_adr/install.log'
+[7.019s] Invoked command in '/home/student/AdR/p2_ws/src/p2_kf_adr' returned '0': PYTHONPATH=/home/student/AdR/p2_ws/build/p2_kf_adr/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/student/AdR/p2_ws/install/p2_kf_adr/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/p2_kf_adr build --build-base /home/student/AdR/p2_ws/build/p2_kf_adr/build install --record /home/student/AdR/p2_ws/build/p2_kf_adr/install.log --single-version-externally-managed install_data
