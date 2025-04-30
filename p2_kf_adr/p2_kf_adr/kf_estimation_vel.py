@@ -26,6 +26,8 @@ class KalmanFilterPureNode(Node):
 
         self.kf = KalmanFilter_2(initial_state, initial_covariance)
 
+        self.visualizer = Visualizer()
+
         self.subscription = self.create_subscription(
             Odometry,
             '/odom',
