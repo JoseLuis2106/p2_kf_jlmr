@@ -1,7 +1,7 @@
 import rclpy
 from rclpy.node import Node
 from nav_msgs.msg import Odometry, Path
-from geometry_msgs.msg import PoseStamped
+from geometry_msgs.msg import PoseStamped, PoseWithCovarianceStamped
 
 import numpy as np
 
@@ -25,6 +25,8 @@ class KalmanFilterPureNode(Node):
         initial_covariance = np.eye(6) * 0.1
 
         self.kf = KalmanFilter_2(initial_state, initial_covariance)
+
+        self.visualizer = Visualizer()
 
         self.subscription = self.create_subscription(
             Odometry,
