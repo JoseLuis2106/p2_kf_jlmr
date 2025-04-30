@@ -27,15 +27,23 @@ class KalmanFilter:
     def predict(self, u, dt):
         # TODO: Implement Kalman filter prediction step
         # Predict the new mean (mu) using A, B, and control input u
+        self.mu_pred = np.dot(self.A,self.mu) + np.dot(self.B,u)
+
         # Predict the new covariance (Sigma) using A and R
-        return 
+        self.Sigma_pred = np.dot(np.dot(self.A,self.Sigma),np.transpose(self.A)) + self.R
+        return
 
     def update(self, z):
         # TODO: Implement Kalman filter correction step
         # Compute Kalman gain K
+        K = np.dot(np.dot(self.Sigma_pred,np.transpose(self.C)),np.linalg.inv(np.dot(np.dot(self.C,self.Sigma_pred)),np.transpose(self.C) + self.Q))
+        
         # Update the mean (mu) with the measurement z
+        self.mu = self.mu_pred + np.dot(K,(z-np.dot(self.C,self.mu_pred)))
+
         # Update the covariance (Sigma)
-        return
+        self.Sigma = np.dot(np.identity(3) - np.dot(K,self.C),self.Sigma_pred)
+        return self.mu, self.Sigma
 
 class KalmanFilter_2:
     def __init__(self, initial_state, initial_covariance,
@@ -56,11 +64,16 @@ class KalmanFilter_2:
     def predict(self, u=None, dt=1.0):
         # TODO: Implement Kalman prediction step for full state (6D)
         # Pure KF: use only the A matrix to update the state and covariance
-        pass
+        self.mu_pred = np.dot(self.A,self.mu)
+        self.Sigma_pred = np.dot(np.dot(self.A,self.Sigma),np.transpose(self.A)) + self.R
 
     def update(self, z):
         # TODO: Implement update step
         # Compute Kalman gain
+        K = np.dot(np.dot(self.Sigma_pred,np.transpose(self.C)),np.linalg.inv(np.dot(np.dot(self.C,self.Sigma_pred)),np.transpose(self.C) + self.Q))
+        
         # Correct the predicted state with measurement
+        self.mu = self.mu_pred + np.dot(K,(z-np.dot(self.C,self.mu_pred)))
+
         # Update covariance
-        pass
+        self.Sigma = np.dot(np.identity(6) - np.dot(K,self.C),self.Sigma_pred)
