@@ -1,7 +1,7 @@
 import rclpy
 from rclpy.node import Node
 from nav_msgs.msg import Odometry, Path
-from geometry_msgs.msg import PoseStamped
+from geometry_msgs.msg import PoseStamped, PoseWithCovarianceStamped
 
 import numpy as np
 
