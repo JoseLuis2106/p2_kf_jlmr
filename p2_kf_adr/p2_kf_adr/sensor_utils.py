@@ -12,7 +12,7 @@ def get_yaw_from_quaternion(quaternion):
     return rot.GetRPY()[2]
 def get_normalized_pose2D(initial_pose, current_pose):
     # Check if the initial pose is set
-    if initial_pose:
+    if initial_pose is not None:
         x, y, yaw = current_pose
         init_x, init_y, init_yaw = initial_pose
 

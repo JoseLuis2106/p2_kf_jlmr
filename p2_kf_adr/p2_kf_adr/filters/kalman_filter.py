@@ -27,22 +27,27 @@ class KalmanFilter:
     def predict(self, u, dt):
         # TODO: Implement Kalman filter prediction step
         # Predict the new mean (mu) using A, B, and control input u
-        self.mu_pred = np.dot(self.A,self.mu) + np.dot(self.B,u)
+        A = self.A()
+        B = self.B(self.mu,dt)
+
+        self.mu_pred = A@self.mu + B@u
 
         # Predict the new covariance (Sigma) using A and R
-        self.Sigma_pred = np.dot(np.dot(self.A,self.Sigma),np.transpose(self.A)) + self.R
-        return
+        self.Sigma_pred = A@self.Sigma@np.transpose(A) + self.R
+        
+        return self.mu_pred, self.Sigma_pred
 
     def update(self, z):
         # TODO: Implement Kalman filter correction step
         # Compute Kalman gain K
-        K = np.dot(np.dot(self.Sigma_pred,np.transpose(self.C)),np.linalg.inv(np.dot(np.dot(self.C,self.Sigma_pred)),np.transpose(self.C) + self.Q))
+        K = self.Sigma_pred@np.transpose(self.C)@np.linalg.inv(self.C@self.Sigma_pred@np.transpose(self.C) + self.Q)
         
         # Update the mean (mu) with the measurement z
-        self.mu = self.mu_pred + np.dot(K,(z-np.dot(self.C,self.mu_pred)))
+        self.mu = self.mu_pred + K@(z-self.C@self.mu_pred)
 
         # Update the covariance (Sigma)
-        self.Sigma = np.dot(np.identity(3) - np.dot(K,self.C),self.Sigma_pred)
+        self.Sigma = (np.eye(3) - K@self.C)@self.Sigma_pred
+
         return self.mu, self.Sigma
 
 class KalmanFilter_2:
@@ -64,16 +69,22 @@ class KalmanFilter_2:
     def predict(self, u=None, dt=1.0):
         # TODO: Implement Kalman prediction step for full state (6D)
         # Pure KF: use only the A matrix to update the state and covariance
-        self.mu_pred = np.dot(self.A,self.mu)
-        self.Sigma_pred = np.dot(np.dot(self.A,self.Sigma),np.transpose(self.A)) + self.R
+        A = self.A(dt)
+        B = self.B()
+
+        self.mu_pred = A@self.mu + B@u
+        self.Sigma_pred = A@self.Sigma@np.transpose(A) + self.R
+        
+        return self.mu_pred, self.Sigma_pred
 
     def update(self, z):
         # TODO: Implement update step
         # Compute Kalman gain
-        K = np.dot(np.dot(self.Sigma_pred,np.transpose(self.C)),np.linalg.inv(np.dot(np.dot(self.C,self.Sigma_pred)),np.transpose(self.C) + self.Q))
+        K = self.Sigma_pred@np.transpose(self.C)@np.linalg.inv(self.C@self.Sigma_pred@np.transpose(self.C) + self.Q)
         
         # Correct the predicted state with measurement
-        self.mu = self.mu_pred + np.dot(K,(z-np.dot(self.C,self.mu_pred)))
+        self.mu = self.mu_pred + K@(z-self.C@self.mu_pred)
 
         # Update covariance
-        self.Sigma = np.dot(np.identity(6) - np.dot(K,self.C),self.Sigma_pred)
+        self.Sigma = (np.eye(6) - K@self.C)@self.Sigma_pred
+        return self.mu, self.Sigma
