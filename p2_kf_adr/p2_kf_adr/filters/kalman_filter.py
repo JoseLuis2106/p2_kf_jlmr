@@ -72,7 +72,7 @@ class KalmanFilter_2:
         A = self.A(dt)
         B = self.B()
 
-        self.mu_pred = A@self.mu + B@u
+        self.mu_pred = A@self.mu #+ B@u
         self.Sigma_pred = A@self.Sigma@np.transpose(A) + self.R
         
         return self.mu_pred, self.Sigma_pred

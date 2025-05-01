@@ -17,7 +17,7 @@ class KalmanFilterPureNode(Node):
         super().__init__('kalman_filter_pure_node')
 
         # TODO: Initialize 6D state and covariance
-        initial_state = np.zeros(6)
+        self.initial_state = np.zeros(6)
         initial_covariance = np.eye(6) * 0.1
 
         self.mu = np.zeros(6)
@@ -28,7 +28,7 @@ class KalmanFilterPureNode(Node):
         obs_noise_std=[0.02, 0.02, 0.02, 0.02, 0.02, 0.02]
         # obs_noise_std=[0.2, 0.2, 0.2, 0.2, 0.2, 0.2]
 
-        self.kf = KalmanFilter_2(initial_state, initial_covariance, proc_noise_std, obs_noise_std)
+        self.kf = KalmanFilter_2(self.initial_state, initial_covariance, proc_noise_std, obs_noise_std)
         
         self.visualizer = Visualizer()
 
@@ -50,7 +50,7 @@ class KalmanFilterPureNode(Node):
     def odom_callback(self, msg):
         # TODO: Extract position, orientation, velocities from msg
         (x, y, yaw) = odom_to_pose2D(msg)
-        self.normalized_pose = get_normalized_pose2D(self.initial_state,(x,y,yaw))
+        self.normalized_pose = get_normalized_pose2D(self.initial_state[:3],(x,y,yaw))
         (x, y, yaw) = self.normalized_pose
 
         curr_time=self.get_clock().now().nanoseconds
