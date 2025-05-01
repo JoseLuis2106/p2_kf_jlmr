@@ -26,7 +26,7 @@ class KalmanFilterNode(Node):
         # proc_noise_std=[0.2, 0.2, 0.2]
 
         obs_noise_std=[0.02, 0.02, 0.02]
-        # obs_noise_std=[0.1, 0.1, 0.1]
+        # obs_noise_std=[0.02, 0.02, 0.02]
 
         self.kf = KalmanFilter(self.initial_state, initial_covariance, proc_noise_std, obs_noise_std)
         
