@@ -23,7 +23,10 @@ class KalmanFilterPureNode(Node):
         self.mu = np.zeros(6)
 
         proc_noise_std=[0.02, 0.02, 0.02, 0.02, 0.02, 0.02]
+        # proc_noise_std=[0.2, 0.2, 0.2, 0.2, 0.2, 0.2]
+
         obs_noise_std=[0.02, 0.02, 0.02, 0.02, 0.02, 0.02]
+        # obs_noise_std=[0.2, 0.2, 0.2, 0.2, 0.2, 0.2]
 
         self.kf = KalmanFilter_2(initial_state, initial_covariance, proc_noise_std, obs_noise_std)
         
